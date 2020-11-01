@@ -1,0 +1,72 @@
+import com.h2.BestLoanRates;
+
+import java.util.Arrays;
+import java.util.Map;
+
+public class Finance {
+    public final static String BEST_LOAN_RATES="bestLoanRates";
+    public final static String SAVINGS_CALCULATOR="savingsCalculator";
+    public final static String MORTGAGE_CALCULATOR="mortgageCalculator";
+    public final static Map<String,String> Finance = Map.of(
+            BEST_LOAN_RATES, "usage: bestLoanRates",
+            SAVINGS_CALCULATOR, "usage: savingsCalculator <credits separated by ','> <debits separated by ','>",
+            MORTGAGE_CALCULATOR, "usage: mortgageCalculator <loanAmount> <termInYears> <annualRate>"
+    ) ;
+    private static boolean validateCommandArguments(String[] args){
+        switch (args[0]){
+            case BEST_LOAN_RATES:
+                return args.length==1;
+
+            case SAVINGS_CALCULATOR:
+                return args.length==3;
+
+            case MORTGAGE_CALCULATOR:
+                return args.length==4;
+
+            default:
+                return false;
+
+        }
+
+
+
+
+    }
+    private static void executeCommand(String command, String[] arguments ){
+        switch (command){
+            case BEST_LOAN_RATES:
+                System.out.print("Finding best loan rates ..."+'\n');
+                BestLoanRates.main(arguments);
+                return ;
+            case SAVINGS_CALCULATOR:
+                System.out.print("Finding your net savings ..."+'\n');
+                BestLoanRates.main(arguments);
+                return ;
+            case MORTGAGE_CALCULATOR:
+                System.out.print("Finding your monthly payment ..."+'\n');
+                BestLoanRates.main(arguments);
+                return ;
+        }
+    }
+    public static void main(String [] args){
+        String command =args[0];
+        Boolean isValidCommand =validateCommandArguments(args);
+        if (Finance.containsKey(command)){
+            return ;
+
+        }
+        else {
+            System.out.print(command + ": command not found"+'\n');
+
+        }
+        if (isValidCommand) {
+            return;
+
+        }
+        else {
+            System.out.print(Finance.get(args[0])+'\n');
+
+        }
+        executeCommand(command, Arrays.copyOfRange(args,1,args.length));
+    }
+}
