@@ -51,20 +51,13 @@ public class Finance {
     public static void main(String [] args){
         String command =args[0];
         Boolean isValidCommand =validateCommandArguments(args);
-        if (Finance.containsKey(command)){
-            return ;
-
-        }
-        else {
+        if (!Finance.containsKey(command)){
             System.out.print(command + ": command not found"+'\n');
-
+            return ;
         }
-        if (isValidCommand) {
-            return;
-
-        }
-        else {
+        if (!isValidCommand) {
             System.out.print(Finance.get(args[0])+'\n');
+            return;
 
         }
         executeCommand(command, Arrays.copyOfRange(args,1,args.length));
