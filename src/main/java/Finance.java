@@ -45,7 +45,7 @@ public class Finance {
                 BestLoanRates.main(arguments);
                 return ;
             case MORTGAGE_CALCULATOR:
-                System.out.println("Finding your monthly payment ...");
+                System.out.print("Finding your monthly payment ..."+'\n');
                 BestLoanRates.main(arguments);
                 return ;
         }
@@ -59,7 +59,7 @@ public class Finance {
         }
         Boolean isValidCommand =validateCommandArguments(args);
         if (!isValidCommand) {
-            System.out.println(commandsToUsage.get(args[0]));
+            System.out.print(commandsToUsage.get(args[0])+'\n');
             return;
 
         }
