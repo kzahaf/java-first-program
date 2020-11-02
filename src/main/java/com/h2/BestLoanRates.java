@@ -6,7 +6,7 @@ public class BestLoanRates {
     public static final Map<Integer, Float> bestRates = Map.of(1, 5.50f, 2, 3.45f, 3, 2.67f);
     public static void main( String[] args) {
         Scanner scanner=new Scanner(System.in);
-        System.out.print("Enter your name\n");
+        System.out.println("Enter your name");
         String name=scanner.nextLine();
         //String name="Khalil";
         System.out.print("Hello "+ name+"\n");
