@@ -37,16 +37,16 @@ public class Finance {
     private static void executeCommand(String command, String[] arguments ){
         switch (command){
             case BEST_LOAN_RATES:
-                System.out.println("Finding best loan rates ...");
+                System.out.print("Finding best loan rates ..."+"\n");
                 BestLoanRates.main(arguments);
                 return ;
             case SAVINGS_CALCULATOR:
-                System.out.println("Finding your net savings ...");
-                BestLoanRates.main(arguments);
+                System.out.print("Finding your net savings ..."+"\n");
+                SavingsCalculator.main(arguments);
                 return ;
             case MORTGAGE_CALCULATOR:
-                System.out.print("Finding your monthly payment ..."+'\n');
-                BestLoanRates.main(arguments);
+                System.out.print("Finding your monthly payment ..."+"\n");
+                MortgageCalculator.main(arguments);
                 return ;
         }
     }
@@ -54,12 +54,12 @@ public class Finance {
         String command =args[0];
 
         if (!commandsToUsage.containsKey(command)){
-            System.out.print(command + ": command not found"+'\n');
+            System.out.print(command + ": command not found"+"\n");
             return ;
         }
         Boolean isValidCommand =validateCommandArguments(args);
         if (!isValidCommand) {
-            System.out.print(commandsToUsage.get(args[0])+'\n');
+            System.out.print(commandsToUsage.get(args[0])+"\n");
             return;
 
         }
