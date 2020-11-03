@@ -13,8 +13,8 @@ public class BestLoanRates {
         System.out.print("Enter the loan term (in years)"+"\n");
         int loanTermInYears=scanner.nextInt();
         //--------------int loanTermInYears=3;
-        float bestRate=getRates(loanTermInYears);
-        if (bestRate==0.0f){
+        float bestRates=getRates(loanTermInYears);
+        if (bestRates==0.0f){
             System.out.print("No available rates for term: " + loanTermInYears + " years"+"\n");
         }
         else System.out.print("Best Available Rate: " + getRates(loanTermInYears) + "%"+"\n");
