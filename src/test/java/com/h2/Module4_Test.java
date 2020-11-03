@@ -1,5 +1,6 @@
 package com.h2;
 
+import org.junit.Ignore;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.platform.commons.util.ReflectionUtils.*;
 
+@Ignore
 public class Module4_Test {
     private static final String classToFind = "com.h2.MortgageCalculator";
     private final InputStream systemIn = System.in;
